@@ -9,7 +9,7 @@ html {
 body {
     margin: auto;
     text-align: center;
-    font: 150%/1.5 sans-serif;
+    font: 150%/1.5 system-ui, sans-serif;
     color: black;
 }
 
@@ -99,7 +99,7 @@ label.foreground > span {
     background: hsla(0,0%,90%,.9);
     color: #333;
     text-shadow: 0 .05em 1px white;
-    font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;
+    font: 150% ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     box-shadow: .05em .1em .2em rgba(0,0,0,.4) inset;
 }
 
@@ -338,4 +338,72 @@ output.rl::before {
 
 footer img {
     vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+    body > label {
+        padding: 1rem;
+    }
+
+    h1 {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    label:is(.background, .foreground) {
+        position: static;
+        display: block;
+        width: auto;
+        text-align: left;
+    }
+
+    .color-picker {
+        position: static;
+    }
+
+    .color-display {
+        position: static;
+    }
+
+    #backgroundDisplay,
+    #foregroundDisplay {
+        position: static;
+        width: auto;
+        text-align: center;
+        direction: ltr;
+    }
+
+    .color-display h2, .color-display p {
+        max-width: 100%;
+    }
+
+    .color-picker {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        height: 6em;
+        padding: 0;
+        width: 6em;
+    }
+
+    label.foreground > span,
+    label.background > .text {
+        margin: 0;
+    }
+
+    input#background, input#foreground {
+        text-align: left;
+        border-radius: 0;
+        margin: 0;
+        padding: .4em .5em .4em .5em;
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    output.rl {
+        margin: 0;
+    }
 }
