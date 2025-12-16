@@ -234,6 +234,9 @@ function colorChanged(input) {
 		if (isForeground) {
 			backgroundDisplay.style.color = input.value;
 		}
+		else {
+			document.body.style.setProperty("--mobile-body-bg", color);
+		}
 
 		input.color = new Color(color);
 

@@ -343,8 +343,11 @@ footer img {
 @media (max-width: 900px) {
     body {
         font-size: clamp(1rem, 3.5vw, 1.125rem);
+        min-height: 100vh;
+        min-height: 100svh;
         padding: clamp(.75rem, 4vw, 1.25rem);
         padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+        background-color: var(--mobile-body-bg, transparent);
     }
 
     body>h1 {
