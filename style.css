@@ -1,8 +1,8 @@
 html {
-    background: linear-gradient(45deg, currentColor 25%,  transparent 25%, transparent 75%, currentColor 75%, currentColor),
-    linear-gradient(45deg, currentColor 25%,  transparent  25%,  transparent 75%, currentColor 75%, currentColor) 10px 10px;
+    background: linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%, currentColor),
+        linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%, currentColor) 10px 10px;
     background-color: #eee;
-    background-size:20px 20px;
+    background-size: 20px 20px;
     color: #bbb;
 }
 
@@ -18,39 +18,39 @@ a {
     text-decoration: none;
 }
 
-body > h1 {
+body>h1 {
     margin-bottom: 1.3em;
     text-transform: lowercase;
     letter-spacing: -1px;
     line-height: 1.3;
 }
 
-body > h1 .wrapper{
+body>h1 .wrapper {
     display: flex;
 }
 
-body > h1 .inner {
+body>h1 .inner {
     flex: 1 1 0;
 }
 
-body > h1 .inner:first-child {
+body>h1 .inner:first-child {
     text-align: right;
 }
 
-body > h1 .inner:last-child {
+body>h1 .inner:last-child {
     text-align: left;
 }
 
-body > h1 .inner > * {
+body>h1 .inner>* {
     padding: .2em .4em .1em .4em;
 }
 
-body > h1 .first {
+body>h1 .first {
     background: black;
     color: white;
 }
 
-body > h1 .second {
+body>h1 .second {
     background: white;
     color: black;
 }
@@ -59,11 +59,11 @@ label {
     position: absolute;
 }
 
-label > .text {
+label>.text {
     display: inline-block;
     padding: .2em .5em;
     border-radius: .3em .3em 0 0;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     color: white;
     font-size: 70%;
     font-weight: bold;
@@ -74,7 +74,7 @@ label.background {
     text-align: left;
 }
 
-label.background > .text {
+label.background>.text {
     margin-left: 1em;
 }
 
@@ -83,7 +83,7 @@ label.foreground {
     text-align: right;
 }
 
-label.foreground > span {
+label.foreground>span {
     margin-right: 1em;
 }
 
@@ -95,12 +95,12 @@ label.foreground > span {
     width: 8em;
     padding: .2em .5em .1em;
     margin-top: -.1em;
-    border: thin solid rgba(0,0,0,.3);
-    background: hsla(0,0%,90%,.9);
+    border: thin solid rgba(0, 0, 0, .3);
+    background: hsla(0, 0%, 90%, .9);
     color: #333;
     text-shadow: 0 .05em 1px white;
     font: 150% ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-    box-shadow: .05em .1em .2em rgba(0,0,0,.4) inset;
+    box-shadow: .05em .1em .2em rgba(0, 0, 0, .4) inset;
 }
 
 .input-wrapper {
@@ -143,18 +143,18 @@ input#foreground {
     position: relative;
     width: 3em;
     padding: 1em 0;
-    border: thin solid rgba(0,0,0,.4);
+    border: thin solid rgba(0, 0, 0, .4);
     margin: -.1em auto 0;
     background: hsl(0, 0%, 50%) -35% -35%;
     background-size: 142% 142%;
     text-align: center;
     color: white;
-    text-shadow: 0 -.06em .05em rgba(0,0,0,.5);
+    text-shadow: 0 -.06em .05em rgba(0, 0, 0, .5);
     font: bold 170%/1 'Arial Unicode MS', sans-serif;
     letter-spacing: -.05em;
-    box-shadow: .05em .1em .2em rgba(0,0,0,.4),
-    -.1em -.1em .5em rgba(0,0,0,.4) inset,
-    0 .3em hsla(0,0%,100%,.2) inset;
+    box-shadow: .05em .1em .2em rgba(0, 0, 0, .4),
+        -.1em -.1em .5em rgba(0, 0, 0, .4) inset,
+        0 .3em hsla(0, 0%, 100%, .2) inset;
     border-radius: 50%;
 }
 
@@ -217,7 +217,7 @@ input#foreground {
     padding: 1em;
     border-radius: .5em;
     margin-top: .7em;
-    filter: drop-shadow(.1em .1em .5em rgba(0,0,0,.5));
+    filter: drop-shadow(.1em .1em .5em rgba(0, 0, 0, .5));
     background: white;
     text-align: left;
     font-size: 65%;
@@ -226,11 +226,11 @@ input#foreground {
     transition: .4s transform;
 }
 
-.contrast:focus + #results,
-.contrast:hover + #results,
+.contrast:focus+#results,
+.contrast:hover+#results,
 #results:hover {
     transform: translateX(-50%);
-    transition-timing-function: cubic-bezier(.5,0,.7,1.8);
+    transition-timing-function: cubic-bezier(.5, 0, .7, 1.8);
 }
 
 /* Pointer */
@@ -271,14 +271,14 @@ input#foreground {
 button {
     padding: .2em .5em .1em;
     margin-top: .2em;
-    border: 1px solid rgba(0,0,0,.5);
+    border: 1px solid rgba(0, 0, 0, .5);
     border-radius: .3em;
     box-shadow: 0 1px white inset,
-    0 .6em hsla(0,0%,100%,.2) inset,
-    -.1em -.1em .5em rgba(0,0,0,.4) inset,
-    0 .3em .2em -.3em rgba(0,0,0,.5);
+        0 .6em hsla(0, 0%, 100%, .2) inset,
+        -.1em -.1em .5em rgba(0, 0, 0, .4) inset,
+        0 .3em .2em -.3em rgba(0, 0, 0, .5);
     background: white;
-    background: hsla(0,0%,80%,.6);
+    background: hsla(0, 0%, 80%, .6);
     cursor: pointer;
     color: black;
     text-shadow: 0 1px 1px white;
@@ -288,13 +288,13 @@ button {
 
 button:hover,
 button:focus {
-    background: hsla(0,0%,100%,.6);
+    background: hsla(0, 0%, 100%, .6);
     text-decoration: underline;
 }
 
 button:active {
     box-shadow: 0 1px hsla(0, 0%, 100%, .3),
-    0 1px .3em .05em rgba(0,0,0,.6) inset;
+        0 1px .3em .05em rgba(0, 0, 0, .6) inset;
 }
 
 .social {
@@ -341,69 +341,153 @@ footer img {
 }
 
 @media (max-width: 900px) {
-    body > label {
-        padding: 1rem;
+    body {
+        font-size: clamp(1rem, 3.5vw, 1.125rem);
+        padding: clamp(.75rem, 4vw, 1.25rem);
+        padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
     }
 
-    h1 {
-        margin-top: 0;
+    body>h1 {
+        margin: .5rem 0 .75rem;
         width: 100%;
+        font-size: 1.5rem;
     }
 
     label:is(.background, .foreground) {
         position: static;
         display: block;
         width: auto;
+        max-width: 42rem;
+        margin: 0 auto .75rem;
         text-align: left;
+        padding: .75rem;
+        border-radius: .75rem;
+        background: rgba(255, 255, 255, .85);
+        box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .12);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+    label>.text {
+        margin: 0 0 .35rem;
+    }
+
+    .input-wrapper {
+        gap: .5rem;
+    }
+
+    .text-input {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+
+    input#background,
+    input#foreground {
+        text-align: left;
+        border-radius: .5rem;
+        margin: 0;
+        padding: .55rem .75rem;
+        flex: 1 1 0;
+        min-width: 0;
     }
 
     .color-picker {
         position: static;
-    }
-
-    .color-display {
-        position: static;
-    }
-
-    #backgroundDisplay,
-    #foregroundDisplay {
-        position: static;
-        width: auto;
-        text-align: center;
-        direction: ltr;
-    }
-
-    .color-display h2, .color-display p {
-        max-width: 100%;
-    }
-
-    .color-picker {
+        flex: 0 0 auto;
         appearance: none;
         -moz-appearance: none;
         -webkit-appearance: none;
         background: none;
-        border: 0;
+        border: 1px solid rgba(0, 0, 0, .25);
+        border-radius: .5rem;
         cursor: pointer;
-        height: 6em;
+        height: clamp(2.75rem, 12vw, 4rem);
         padding: 0;
-        width: 6em;
+        width: clamp(2.75rem, 12vw, 4rem);
+        overflow: hidden;
     }
 
-    label.foreground > span,
-    label.background > .text {
-        margin: 0;
+    .contrast {
+        margin: .5rem auto 0;
     }
 
-    input#background, input#foreground {
+    #results {
+        position: static;
+        transform: none;
+        max-width: 42rem;
+        margin: .75rem auto 1rem;
+        transition: none;
+    }
+
+    .contrast:focus+#results,
+    .contrast:hover+#results,
+    #results:hover {
+        transform: none;
+    }
+
+    #results:before,
+    #results:after {
+        display: none;
+        content: none;
+    }
+
+    .color-display {
+        position: static;
+        padding: 1.5rem 1rem;
+    }
+
+    #backgroundDisplay {
+        position: static;
+        width: auto;
         text-align: left;
-        border-radius: 0;
+        direction: ltr;
+        overflow: visible;
+        padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    #backgroundDisplay h2,
+    #backgroundDisplay p,
+    #backgroundDisplay footer {
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #foregroundDisplay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        width: auto;
+        text-align: center;
+        direction: ltr;
+        z-index: 10;
+        padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom, 0px));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #swap {
+        width: min(22rem, 100%);
+        padding: .6rem 1rem;
         margin: 0;
-        padding: .4em .5em .4em .5em;
-        flex-grow: 1;
-        min-width: 0;
+    }
+
+    .social {
+        display: none;
+    }
+
+    label.foreground>span {
+        margin-right: 0;
+    }
+
+    label.background>.text {
+        margin-left: 0;
     }
 
     output.rl {
-        margin: 0;
+        margin: .5rem 0 0;
     }
 }
