@@ -297,6 +297,10 @@ button:active {
         0 1px .3em .05em rgba(0, 0, 0, .6) inset;
 }
 
+#swapMobile {
+    display: none;
+}
+
 .social {
     position: absolute;
     top: 10px;
@@ -346,7 +350,7 @@ footer img {
         min-height: 100vh;
         min-height: 100svh;
         padding: clamp(.75rem, 4vw, 1.25rem);
-        padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
         background-color: var(--mobile-body-bg, transparent);
     }
 
@@ -373,6 +377,21 @@ footer img {
 
     label>.text {
         margin: 0 0 .35rem;
+    }
+
+    .swap-row {
+        max-width: 42rem;
+        margin: -.25rem auto .75rem;
+        display: flex;
+        justify-content: center;
+        padding: 0 .75rem;
+    }
+
+    #swapMobile {
+        display: block;
+        width: min(22rem, 100%);
+        padding: .6rem 1rem;
+        margin: 0;
     }
 
     .input-wrapper {
@@ -445,7 +464,7 @@ footer img {
         text-align: left;
         direction: ltr;
         overflow: visible;
-        padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
     }
 
     #backgroundDisplay h2,
@@ -457,25 +476,7 @@ footer img {
     }
 
     #foregroundDisplay {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: auto;
-        bottom: 0;
-        width: auto;
-        text-align: center;
-        direction: ltr;
-        z-index: 10;
-        padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom, 0px));
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #swap {
-        width: min(22rem, 100%);
-        padding: .6rem 1rem;
-        margin: 0;
+        display: none;
     }
 
     .social {

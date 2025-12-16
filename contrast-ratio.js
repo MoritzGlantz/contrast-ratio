@@ -295,7 +295,7 @@ foregroundColorPicker.oninput = function(event) {
 	update();
 };
 
-swap.onclick = function() {
+function swapColors() {
 	var backgroundColor = background.value;
 	background.value = foreground.value;
 	foreground.value = backgroundColor;
@@ -310,7 +310,12 @@ swap.onclick = function() {
 
 	var fgStyle = getComputedStyle(foregroundDisplay).backgroundColor;
 	foregroundColorPicker.value = new Color(fgStyle).toHex(false);
-};
+}
+
+swap.onclick = swapColors;
+if (window.swapMobile) {
+	swapMobile.onclick = swapColors;
+}
 
 window.encodeURIComponent = (function(){
 	var encodeURIComponent = window.encodeURIComponent;
