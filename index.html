@@ -41,13 +41,19 @@
 	</label>
 
 	<output for="background foreground" class="contrast" tabindex="0" aria-live="polite">
+		<span class="contrast-label" aria-hidden="true">Contrast ratio</span>
+		<span class="contrast-level" aria-hidden="true"></span>
 		<strong>?</strong>
 		<span class="error"></span>
+		<span class="contrast-summary" aria-hidden="true"></span>
 	</output>
 
 	<section id="results">
-		<output for="background foreground" id="preciseContrast" aria-label="Precise contrast"></output>
-		<output for="background foreground" id="wcag"></output>
+		<details class="results-details">
+			<summary>Details</summary>
+			<output for="background foreground" id="preciseContrast" aria-label="Precise contrast"></output>
+			<output for="background foreground" id="wcag"></output>
+		</details>
 	</section>
 
 	<section class="color-display" id="backgroundDisplay">

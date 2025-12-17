@@ -51,6 +51,47 @@ if (window.Incrementable) {
 }
 
 var output = $(".contrast");
+var resultsDetails = $(".results-details");
+if (resultsDetails && window.matchMedia) {
+	var detailsMediaQuery = window.matchMedia("(min-width: 901px)");
+	var syncDetails = function () {
+		resultsDetails.open = detailsMediaQuery.matches;
+	};
+
+	syncDetails();
+
+	if (detailsMediaQuery.addEventListener) {
+		detailsMediaQuery.addEventListener("change", syncDetails);
+	}
+	else if (detailsMediaQuery.addListener) {
+		detailsMediaQuery.addListener(syncDetails);
+	}
+}
+var contrastLevel = $(".contrast-level", output);
+var contrastSummary = $(".contrast-summary", output);
+
+var mobileLevelMeta = {
+	"fail": {
+		level: "Fail",
+		summary: "Below WCAG AA (normal text)"
+	},
+	"aa-large": {
+		level: "AA Large",
+		summary: "Passes AA for large text"
+	},
+	"aa": {
+		level: "AA",
+		summary: "Passes AA for normal text"
+	},
+	"aaa": {
+		level: "AAA",
+		summary: "Passes AAA for normal text"
+	},
+	"range": {
+		level: "Range",
+		summary: "Varies due to transparency"
+	}
+};
 
 var levels = {
 	"fail": {
@@ -133,27 +174,32 @@ function update() {
 			}
 		}
 
-		$("strong", output).textContent = floor(contrast.ratio, 2);
+		var formatPreciseContrast = function (value) {
+			return (+value).toFixed(4);
+		};
 
-		preciseContrast.innerHTML = `Precise contrast: ${contrast.ratio - contrast.error}`;
+		$("strong", output).textContent = floor(contrast.ratio, 2);
 
 		var error = $(".error", output);
 
 		if (contrast.error) {
 			error.textContent = "±" + floor(contrast.error, 2);
-			error.title = floor(min, 2) + " - " + floor(max, 2);
-			preciseContrast.textContent = `${min} - ${max}`;
+			error.title = formatPreciseContrast(min) + " - " + formatPreciseContrast(max);
+			preciseContrast.textContent = formatPreciseContrast(min) + " - " + formatPreciseContrast(max);
 		}
 		else {
 			error.textContent = "";
 			error.title = "";
-			preciseContrast.textContent = contrast.ratio;
+			preciseContrast.textContent = formatPreciseContrast(contrast.ratio);
 		}
 
 		if (classes.length <= 1) {
-			wcag.textContent = messages[classes[0]];
+			var level = classes[0];
+			wcag.textContent = messages[level];
 			output.style.backgroundImage = "";
-			output.style.backgroundColor = levels[classes[0]].color;
+			output.style.backgroundColor = levels[level].color;
+			output.style.setProperty("--level-color", levels[level].color);
+			output.style.removeProperty("--level-gradient");
 		}
 		else {
 			var fragment = document.createDocumentFragment();
@@ -194,10 +240,31 @@ function update() {
 
 			var gradient = "linear-gradient(135deg, " + stops.join(", ") + ")";
 
+			output.style.backgroundColor = "";
 			output.style.backgroundImage = gradient;
+			output.style.setProperty("--level-color", levels[classes[0]].color);
+			output.style.setProperty("--level-gradient", gradient);
 		}
 
 		output.className = "contrast " + classes.join(" ");
+		var mobileLevel = classes.length <= 1? classes[0] : "range";
+		var meta = mobileLevelMeta[mobileLevel];
+		if (meta) {
+			if (contrastLevel) {
+				contrastLevel.textContent = meta.level;
+			}
+			if (contrastSummary) {
+				contrastSummary.textContent = meta.summary;
+			}
+		}
+		else {
+			if (contrastLevel) {
+				contrastLevel.textContent = "";
+			}
+			if (contrastSummary) {
+				contrastSummary.textContent = "";
+			}
+		}
 
 		ctx.clearRect(0, 0, 16, 16);
 
