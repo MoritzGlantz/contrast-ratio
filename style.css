@@ -455,12 +455,27 @@ footer img {
         -webkit-appearance: none;
         background: none;
         border: 1px solid rgba(0, 0, 0, .25);
-        border-radius: .5rem;
+        border-radius: 999px;
         cursor: pointer;
-        height: clamp(2.75rem, 12vw, 4rem);
+        height: clamp(2.25rem, 10vw, 3rem);
         padding: 0;
-        width: clamp(2.75rem, 12vw, 4rem);
+        width: clamp(2.25rem, 10vw, 3rem);
         overflow: hidden;
+        box-shadow: 0 .15rem .6rem rgba(0, 0, 0, .12);
+    }
+
+    .color-picker::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    .color-picker::-webkit-color-swatch {
+        border: 0;
+        border-radius: 999px;
+    }
+
+    .color-picker::-moz-color-swatch {
+        border: 0;
+        border-radius: 999px;
     }
 
     .contrast {
