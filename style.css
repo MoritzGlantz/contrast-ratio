@@ -493,5 +493,6 @@ footer img {
 
     output.rl {
         margin: .5rem 0 0;
+        color: hsl(0, 0%, 15%) !important;
     }
 }

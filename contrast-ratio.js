@@ -79,16 +79,19 @@ function updateLuminance(input) {
 	var luminanceOutput = $(".rl", input.parentNode.parentNode);
 
 	var color = input.color;
+	var formatLuminance = function (value) {
+		return (+value).toFixed(4);
+	};
 
 	if (input.color.alpha < 1) {
 		var lumBlack = color.overlayOn(Color.BLACK).luminance;
 		var lumWhite = color.overlayOn(Color.WHITE).luminance;
 
-		luminanceOutput.textContent = lumBlack + " - " + lumWhite;
+		luminanceOutput.textContent = formatLuminance(lumBlack) + " - " + formatLuminance(lumWhite);
 		luminanceOutput.style.color = Math.min(lumBlack, lumWhite) < .2? "white" : "black";
 	}
 	else {
-		luminanceOutput.textContent = color.luminance;
+		luminanceOutput.textContent = formatLuminance(color.luminance);
 		luminanceOutput.style.color = color.luminance < .2? "white" : "black";
 	}
 }
